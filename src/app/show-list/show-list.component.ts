@@ -10,7 +10,7 @@ export class ShowListComponent {
   shows: any[];
 
   constructor(private service: ShowListService) {
-    this.shows = service.getShows();
+    service.getShows().subscribe(shows => this.shows = shows);
   }
 
   navigate(show) {
