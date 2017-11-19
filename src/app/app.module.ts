@@ -5,6 +5,7 @@ import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 import { ShowListComponent } from "./show-list/show-list.component";
+import { ShowListService } from "./show-list/show-list.service";
 import { HeaderModule } from "./header/header.module";
 
 @NgModule({
@@ -18,7 +19,7 @@ import { HeaderModule } from "./header/header.module";
     AppComponent,
     ShowListComponent,
   ],
-  providers: [],
+  providers: [ShowListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

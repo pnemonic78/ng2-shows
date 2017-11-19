@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { data } from "./show-list.data";
+import { ShowListService } from "./show-list.service"
 
 @Component({
   selector: 'app-show-list',
@@ -9,8 +9,8 @@ import { data } from "./show-list.data";
 export class ShowListComponent {
   shows: any[];
 
-  constructor() {
-    this.shows = data.map(item => item.show);
+  constructor(private service: ShowListService) {
+    this.shows = service.getShows();
   }
 
   navigate(show) {
